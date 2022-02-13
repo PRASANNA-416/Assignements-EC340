@@ -1,7 +1,7 @@
 module addern (X, Y, carryin, S, carryout,sig);
   
   input carryin;
-  intput sig;
+  input sig;
   input [7:0] X, Y;
   output reg [8:0] S;
   output reg carryout;
