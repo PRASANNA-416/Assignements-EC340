@@ -13,6 +13,9 @@ initial
  begin
    clk =0; reset_n =1; start =0; data1 = 4'b0000; 
     #150 reset_n = 0;start = 1; data1 = 4'b0110; 
+    #800 start = 0;reset_n = 1;
+    #100 data1 = 4'b0100;start = 1;reset_n = 0;
+    
 
 
   end
@@ -20,9 +23,4 @@ initial
 initial
     forever #(t_PERIOD/2) clk <= ~clk;
 
-always @(done) 
-   if (done ==1)
-       $finish;
-    
-    
 endmodule
