@@ -1,4 +1,4 @@
-	module factorial_tb;
+		module factorial_tb;
 
 parameter t_PERIOD =100;
 reg clk, reset_n, start;
@@ -15,9 +15,8 @@ initial
     #150 reset_n = 0;start = 1; data1 = 4'b0110; 
     #800 start = 0;reset_n = 1;
     #100 data1 = 4'b0100;start = 1;reset_n = 0;
-    
-
-
+    #800 start = 0;reset_n = 1;
+    #100 data1 = 4'b1000;start = 1;reset_n = 0;
   end
 
 initial
