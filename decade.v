@@ -24,6 +24,8 @@ module decade(load,reset,data_in,counter_on,counter_up,clock,TC,count);
       end
       else
         count <= count - 1;
+  else if(load)
+    count <= data_in;
   
 endmodule
       
