@@ -1,4 +1,4 @@
-	module factorial(clk,reset,start,xin,done,fact);
+module factorial(clk,reset,start,xin,done,fact);
     parameter N=4;
     input clk,reset,start;
     input [N-1:0] xin;
@@ -28,14 +28,23 @@ always @(posedge clk or posedge reset)
 
 always @(*)
     begin
-	N_d=N_q;count_d=count_q;done=0;fact=0;
     case(pst_st)
         s0: if(start==1'b1) nxt_st=s1;else nxt_st=s0;
-	    s1: begin N_d=xin;count_d= xin - 1;nxt_st=s2;end
-        s2: begin if(count_d>0) nxt_st=s2;else nxt_st=s3;N_d=N_q * count_q;count_d = count_q - 1;end
-        s3: begin if(start==1'b1) nxt_st=s3;else nxt_st=s0;done=1; fact=N_q;end
+        s1: nxt_st=s2;
+        s2: if(count_d>0) nxt_st=s2;else nxt_st=s3;
+        s3: if(start==1'b1) nxt_st=s3;else nxt_st=s0;
         default:nxt_st=s0;
     endcase
     end
 
+always @(*)
+    begin
+    N_d=N_q;count_d=count_q;done=0;fact=0;
+    case(pst_st)
+        s1:begin N_d=xin;count_d= xin - 1;end
+        s2: begin N_d=N_q * count_q;count_d = count_q - 1;end
+        s3: begin done=1; fact=N_q;end
+    endcase
+    end
+endmodule
 
