@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/simulation/modelsim
+vadder8
+Z1 !s110 1644945195
+!i10b 1
+!s100 :5nhXBBLmlOmdfgVQb:HR0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I:<3ijM9S@lFRGdfgAl]e63
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1644939888
+Z5 8C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v
+Z6 FC:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v
+!i122 0
+L0 6 12
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1644945195.000000
+Z9 !s107 C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8|C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v|
+!i113 1
+Z11 o-vlog01compat -work work
+Z12 !s92 -vlog01compat -work work {+incdir+C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8}
+Z13 tCvgOpt 0
+vadder8_tb
+R1
+!i10b 1
+!s100 1M:zhP70=i^Jf9]McCViH1
+R2
+IzJ`jo7adU7T6mM@@I<I_M3
+R3
+R0
+w1644936897
+8C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v
+FC:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v
+!i122 1
+L0 1 17
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/..|C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v|
+!i113 1
+R11
+!s92 -vlog01compat -work work {+incdir+C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/..}
+R13
+vfulladder
+R1
+!i10b 1
+!s100 n]G^88ea<0HHQnK@RDT^d1
+R2
+IA<2^<maS`i[I=]ez4N5za0
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 1 4
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13

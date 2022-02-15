@@ -1,0 +1,9 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/91831/Desktop/Tech\ and\ inno/nitk/sem-4\ kill\ it/ec340\ COA/assignments/Assignment\ 1/Assignement-1-EC340/adder8 {C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v}
+

@@ -1,0 +1,58 @@
+# Reading pref.tcl
+# do adder8_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/91831/Desktop/Tech\ and\ inno/nitk/sem-4\ kill\ it/ec340\ COA/assignments/Assignment\ 1/Assignement-1-EC340/adder8 {C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:15 on Feb 15,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8" C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v 
+# -- Compiling module fulladder
+# -- Compiling module adder8
+# 
+# Top level modules:
+# 	adder8
+# End time: 22:43:15 on Feb 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/91831/Desktop/Tech\ and\ inno/nitk/sem-4\ kill\ it/ec340\ COA/assignments/Assignment\ 1/Assignement-1-EC340/adder8/Quartus/.. {C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:43:15 on Feb 15,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/.." C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v 
+# -- Compiling module adder8_tb
+# 
+# Top level modules:
+# 	adder8_tb
+# End time: 22:43:15 on Feb 15,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  adder8_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" adder8_tb 
+# Start time: 22:43:15 on Feb 15,2022
+# Loading work.adder8_tb
+# Loading work.adder8
+# Loading work.fulladder
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (8) for port 'Ci'. The port definition is at: C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/adder8.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /adder8_tb/ins0 File: C:/Users/91831/Desktop/Tech and inno/nitk/sem-4 kill it/ec340 COA/assignments/Assignment 1/Assignement-1-EC340/adder8/Quartus/../adder8_tb.v Line: 6
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+run
+run
+run
+run
+run
+run
+# End time: 22:45:06 on Feb 15,2022, Elapsed time: 0:01:51
+# Errors: 0, Warnings: 1

@@ -1,0 +1,141 @@
+|adder8
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+Ci => Ci.IN1
+S[0] <= fulladder:ufa1.sum
+S[1] <= fulladder:ufa2.port3
+S[2] <= fulladder:ufa3.port3
+S[3] <= fulladder:ufa4.port3
+S[4] <= fulladder:ufa5.port3
+S[5] <= fulladder:ufa6.port3
+S[6] <= fulladder:ufa7.port3
+S[7] <= fulladder:ufa8.port3
+Co <= fulladder:ufa8.port4
+
+
+|adder8|fulladder:ufa1
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa2
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa3
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa4
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa5
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa6
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa7
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder8|fulladder:ufa8
+ai => sum.IN0
+ai => cout.IN0
+ai => cout.IN0
+bi => sum.IN1
+bi => cout.IN1
+bi => cout.IN0
+ci => sum.IN1
+ci => cout.IN1
+ci => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
