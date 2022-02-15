@@ -11,10 +11,12 @@ wire done;
 
 initial
  begin
-   clk =0; reset_n =0; start =0; data1 = 4'b0100; 
+   clk =0; reset_n =0; start =0; data1 = 4'b0000; 
     #150 reset_n = 1; data1 = 4'b0110;
-    #200 start = 1;
-    #400 start = 0;
+    #200 reset_n = 1;data1 = 4'b1100;
+    #250 reset_n = 1;data1 = 4'b0110;
+    #300 start = 1;
+    #500 start = 0;
   end
 
 initial
