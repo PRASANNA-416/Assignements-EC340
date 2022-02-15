@@ -39,6 +39,7 @@ begin
             A_d = DataA;
         B_d = DataB;
         Comp_d = 2'b11;
+      pdt_d = 0;pdt_q = 0;
     end
     S1: begin
         if (B_q == 0) cp_fsm_d = S2;
