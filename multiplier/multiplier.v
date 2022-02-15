@@ -1,66 +1,59 @@
-module multiplier(input clock, reset_n, start,
-                  input [7:0] DataA, DataB,
-                  output reg [15:0] product, 
-output reg done);
 
-reg [1:0] Comp_d ,Comp_q;
+module multiplier#(parameter n=8)(clk,reset,start,A,B,product,done);
+input clk,reset,start;
+input wire [n-1:0] A,B;
+output reg [2*n-1:0] product;
+output reg done;
 
-parameter [1:0] S0=2'b00, S1=2'b01, S2=2'b10;
-  reg [1:0] cp_fsm_d, cp_fsm_q;
-  reg [7:0] N_zeros, B_d, B_q;
-  reg [15:0] A_d, A_q,pdt_d, pdt_q;
+reg [1:0] s [2:0];
+assign s[0] = 2'b00;
+assign s[1] =2'b01;
+assign s[2] = 2'b10;
+reg [1:0] cp_fsm_q,cp_fsm_d;
+reg [2*n-1:0] A_q,A_d,prod_q,prod_d,B_q,B_d;
+reg [4:0]count_q,count_d;
 
-always @(posedge clock or posedge reset_n)
-begin
-    if (reset_n == 0) cp_fsm_q <= S0;
-    else 
-    begin
-        cp_fsm_q <= cp_fsm_d;
-        pdt_q <= pdt_d;
-        A_q <= A_d;
-        B_q <= B_d;
-        Comp_q <= Comp_d;
-    end
+always @(posedge clk,posedge reset) begin
+if (reset) begin
+cp_fsm_q <= s[0];
+end
+else begin
+cp_fsm_q <= cp_fsm_d;
+A_q <= A_d;
+B_q <= B_d;
+count_q <= count_d;
+prod_q <= prod_d;
+end
 end
 
-always @(*)
-begin
-    cp_fsm_d = cp_fsm_q; done = 1'b0;
-    case (cp_fsm_q)
-        S0: if (start == 1) cp_fsm_d = S1;
-        S1: if (B_q == 0) cp_fsm_d = S2;
-        S2: begin done = 1'b1; if (start == 0) cp_fsm_d = S0; end
-        default: cp_fsm_d = S0;
-    endcase
+always @(*) begin 
+A_d = A_q;B_d = B_q;count_d = count_q;prod_d = prod_q;done = 0;cp_fsm_d = cp_fsm_q;
+case(cp_fsm_q) 
+s[0] : begin
+done = 0;
+product = 0;
+cp_fsm_d = start?s[1] : s[0];
+count_q = 0;count_d = 0;
+A_q = {{8{A[7]}},A}; A_d = {{8{A[7]}},A};
+B_q = {{8{B[7]}},B}; B_d = {{8{B[7]}},B};
+prod_q = 0; prod_d = 0;
+end
+s[1] : begin
+cp_fsm_d = (count_q==16)?s[2]:s[1];
+if (~(count_q==16)) begin
+if (B_q[0])
+prod_d = prod_q + A_q;
+A_d = A_q << 1;
+B_d = B_q >> 1;
+count_d = count_q + 1;
+end
+end
+s[2]: begin
+done = 1;
+product = prod_q; 
+cp_fsm_d = start ? s[2] : s[0];
+end
+endcase
 end
 
-always @(*)
-begin
-    pdt_d = pdt_q; A_d = A_q; B_d = B_q;Comp_d = Comp_q;
-    case (cp_fsm_q)
-    S0: begin
-      pdt_d = 16'b0;
-      if (DataA[7] == 1'b1)
-        begin
-          A_d[7:0] = DataA;
-          A_d[15:8] = 8'b1111;
-        end
-        else 
-            A_d = DataA;
-        B_d = DataB;
-        Comp_d = 2'b11;
-    end
-    S1: begin
-        A_d = A_q << 1;
-        B_d = B_q >> 1;
-        if ((B_q[0] == 1'b1) && Comp_q != 0)
-            pdt_d = A_q + pdt_q ;
-        else if ((B_q[0] == 1'b1) && Comp_q == 0)
-            pdt_d = (~A_q + 1) + pdt_q;
-       Comp_d = Comp_q - 1;
-    end
-    S2: product = pdt_q;
-    default: pdt_d = pdt_q;
-    endcase
-end
 endmodule
