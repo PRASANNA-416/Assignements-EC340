@@ -9,7 +9,7 @@ module multiplier(input clock, reset_n, start,input [7:0] DataA, DataB,output re
 
     always @(posedge clock or posedge reset_n)
     begin
-        if (reset_n == 0) cp_fsm_q <= S0;
+        if (reset_n) cp_fsm_q <= S0;
         else 
         begin
             cp_fsm_q <= cp_fsm_d;
