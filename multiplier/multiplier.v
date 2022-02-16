@@ -9,7 +9,7 @@ reg [15:0] A_d, A_q,pdt_d, pdt_q;
 
 always @(posedge clock or posedge reset_n)
 begin
-    if (reset_n == 0) 
+    if (reset_n) 
 	    cp_fsm_q <= S0;
     else 
     begin
