@@ -18,7 +18,7 @@ initial
     #2000 start = 0;reset_n = 1;
     #100 reset_n = 0;start = 1;data1 = 8'b01100100; data2 = 8'b10110011;
     #2000 start = 0;reset_n = 1;
-    #100 reset_n = 0;start = 1;data1 = 8'b11000111; data2 = 8'b00111001;
+    #100 reset_n = 0;start = 1;data1 = 8'b11000111; data2 = 8'b00110001;
     #2000 start = 0;reset_n = 1;
     #100 reset_n = 0;start = 1;data1 = 8'b11000111; data2 = 8'b00111001;
     
