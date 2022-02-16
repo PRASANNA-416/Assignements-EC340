@@ -1,7 +1,4 @@
-	module multiplier(input clock, reset_n, start,
-input [7:0] DataA, DataB,
-output reg [15:0] product, 
-output reg done);
+module multiplier(input clock, reset_n, start,input [7:0] DataA, DataB,output reg [15:0] product, output reg done);
 
 reg [1:0] Comp_d ,Comp_q;
 
@@ -12,7 +9,8 @@ reg [15:0] A_d, A_q,pdt_d, pdt_q;
 
 always @(posedge clock or posedge reset_n)
 begin
-    if (reset_n == 0) cp_fsm_q <= S0;
+    if (reset_n == 0) 
+	    cp_fsm_q <= S0;
     else 
     begin
         cp_fsm_q <= cp_fsm_d;
@@ -35,21 +33,23 @@ begin
 end
 
 always @(*)
-begin
-    pdt_d = pdt_q; A_d = A_q; B_d = B_q;Comp_d = Comp_q;
-    case (cp_fsm_q)
-    S0: begin
-        pdt_d = 16'b0;
-        if (DataA[7] == 1'b1)
-        begin
-            A_d[7:0] = DataA;
-            A_d[15:8] = 8'b11111111;
-        end
-        else 
-            A_d = DataA;
-        B_d = DataB;
-        Comp_d = 2'b11;
-    end
+	begin
+    	pdt_d = pdt_q; A_d = A_q; B_d = B_q;Comp_d = Comp_q;
+    	case (cp_fsm_q)
+   	 S0: begin
+        	pdt_d = 16'b0;
+        	if (DataA[7] == 1'b1)
+        	begin
+            	A_d[7:0] = DataA;
+            	A_d[15:8] = 8'b11111111;
+        	end
+        	else 
+		begin
+            	A_d = DataA;
+        	B_d = DataB;
+        	Comp_d = 2'b11;
+		end
+    	end
     S1: begin
         A_d = A_q << 1;
         B_d = B_q >> 1;
