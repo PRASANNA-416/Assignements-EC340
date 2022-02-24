@@ -1,1 +1,1 @@
-# Assignement-1-EC340
+# Assignements-EC340
