@@ -22,22 +22,24 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         add     $s0, $s0, $t6
         lw      $t4, 0($s0)         #here instead of $t4 , maybe $a0
         
+        move    $a1,$t4
+        la      $a2,$s0
         slt      $t7, $t4, $t0
         bne      $t7, $zero,calmin
 
         addi    $t1, $t1, 1         # i++
         j       loop
 
-calmin: move    $t0, $t4
-        la      $t8, $s0
+calmin: move    $t0, $a1
+        la      $t8, $a2
         jr $ra
 
-done:   lw      $t7, 0($s0)
+done:   lw      $t7, 0($a2)
         sw      $t7, 0($t8)
-        sw      $t4, 0($s0)
+        sw      $a1, 0($a2)
         
         li      $v0, 1              # print min element
-        move    $a0, $t4
+        move    $a0, $a1
         syscall
 
         li      $v0, 11             # print newline character
