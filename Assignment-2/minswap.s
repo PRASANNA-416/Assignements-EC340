@@ -10,10 +10,6 @@
         
 main:   
 
-        ## min = 0;
-        ## for(i=0; i<5; i++);
-        ##    sum = sum + array[i];
-
         li      $t0, 0              # min = 0
         li      $t1, 0              # i (index) = 0
         li      $t8, 0              #temp variable for swapping
@@ -27,7 +23,7 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         lw      $t4, 0($t5)
         
         slt      $t7, $t4, $t0
-        bnq      $t7, $zero,MIN
+        beq      $t7, 1,MIN
 
         addi    $t1, $t1, 1         # i++
         j       loop
