@@ -34,6 +34,8 @@ rgb_to_gray:
         jr      $31
         nop
 
+$LC0:
+        .ascii  "%d\012\000"
 main:
         addiu   $sp,$sp,-56
         sw      $31,52($sp)
@@ -74,6 +76,18 @@ $L5:
         nop
 
         sw      $2,44($fp)
+        lw      $5,28($fp)
+        lui     $2,%hi($LC0)
+        addiu   $4,$2,%lo($LC0)
+        jal     printf
+        nop
+
+        lw      $5,44($fp)
+        lui     $2,%hi($LC0)
+        addiu   $4,$2,%lo($LC0)
+        jal     printf
+        nop
+
         lw      $2,24($fp)
         nop
         addiu   $2,$2,1
