@@ -23,7 +23,7 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         lw      $t4, 0($s0)         #here instead of $t4 , maybe $a0
         
         move    $a1,$t4
-        la      $a2,$s0
+        move      $a2,$s0
         slt      $t7, $t4, $t0
         bne      $t7, $zero,calmin
 
@@ -31,7 +31,7 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         j       loop
 
 calmin: move    $t0, $a1
-        la      $t8, $a2
+        move      $t8, $a2
         jr $ra
 
 done:   lw      $t7, 0($a2)
