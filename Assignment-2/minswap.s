@@ -29,7 +29,7 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         j       loop
 
 calmin: move    $t0, $t4
-        lw      $t8, $s0
+        la      $t8, $s0
         jr $ra
 
 done:   lw      $t7, 0($s0)
