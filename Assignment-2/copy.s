@@ -1,5 +1,4 @@
-	# Calculate and print the sum of an integer array
-
+#to copy contents of one array to another
         .data
 
 array1:  .word 4 1 6 8 9 10 12 14 16 18
@@ -27,7 +26,7 @@ loop:   slti    $t5, $t1, 10
         j       loop
 
 
-done:   li      $v0, 1              # print sum
+done:   li      $v0, 1              # print array
         move    $a0, $t0
         syscall
 
