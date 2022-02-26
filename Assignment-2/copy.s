@@ -2,7 +2,8 @@
 
         .data
 
-array:  .word 1 2 3 4 5
+array:  .word 4 1 6 8 9 10 12 14 16 18
+
 
         .text
         .globl main
