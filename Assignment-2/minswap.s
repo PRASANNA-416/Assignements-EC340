@@ -25,9 +25,20 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
 
 Nmin:   
         move    $s2,$t4
+        add     $s3,$t1,$zero
+        #lw     $s3,0($t0)
         j       loop
 
 done:   
+        lw      $t5, 0($t0)
+        sw      $s2, 0($t0)
+        nor     $s3, $s3, $zero
+        addi    $s3, $s3,9
+        sll     $s3 , $s3 , 2
+        nor     $s3,  $s3, $zero
+        add    $t0 ,$t0, $s3
+        sw      $t5, 0($t0)
+
         li      $v0, 1              # print min element
         move    $a0, $s2
         syscall
