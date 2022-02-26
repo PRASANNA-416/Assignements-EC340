@@ -21,8 +21,9 @@ loop:   slti    $t5, $t1, 10
         beq     $t5, $zero, done
        	lw	$t3, 0($s0)
 	sw	$t3, 0($t0)
-	addu 	$s0,$s0,4
-	addu	$t0,$t0,4
+	addu 	$s0, $s0, 4
+	addu	$t0, $t0, 4
+	addi 	$t1, $t1, 1
         j       loop
 
 
