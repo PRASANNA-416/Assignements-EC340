@@ -11,12 +11,15 @@ int main() {
 
 	int i=0;
 	int rgb, red, green, blue, gray;
+
 	while (pixels[i] != -1) {
 		rgb = pixels[i];
 		blue = 	rgb & 0xff;
 		green = (rgb >> 8) & 0xff;
 		red = 	(rgb >> 16) & 0xff;
 		gray = rgb_to_gray(red, green, blue);
+        printf("%d\n",rgb);
+		printf("%d\n", gray);
 		i++;
 	}
 }
