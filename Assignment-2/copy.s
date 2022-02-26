@@ -26,12 +26,6 @@ loop:   slti    $t5, $t1, 10
         j       loop
 
 
-done:   li      $v0, 1              # print array
-        move    $a0, $t0
-        syscall
-
-        li      $v0, 11             # print newline character
-        li      $a0, 0x0a
-        syscall
+done:  
 
         jr $ra                      # return from main
