@@ -23,12 +23,12 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         lw      $t4, 0($t5)
         
         slt      $t7, $t4, $t0
-        beq      $t7, 1,MIN
+        beq      $t7, 1,calmin
 
         addi    $t1, $t1, 1         # i++
         j       loop
 
-MIN:    lw      $t0, $t4
+calmin:    lw      $t0, $t4
         lw      $t8, $t5
         jr $ra
 
