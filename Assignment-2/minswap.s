@@ -33,9 +33,11 @@ done:
         lw      $t5, 0($t0)
         sw      $s2, 0($t0)
         nor     $s3, $s3, $zero
-        addi    $s3, $s3,9
+        addi    $s3,$s3,1
+        addi    $s3, $s3,10
         sll     $s3 , $s3 , 2
         nor     $s3,  $s3, $zero
+        addi    $s3, $s3,1
         add    $t0 ,$t0, $s3
         sw      $t5, 0($t0)
 
@@ -49,3 +51,4 @@ done:
 
         jr $ra                      # return from main
         
+
