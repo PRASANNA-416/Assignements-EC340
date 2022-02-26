@@ -10,34 +10,25 @@
         
 main:   
 
-        li      $t0, 0              # min = 0
-        li      $t1, 0              # i (index) = 0
+        la      $t0, array
+        li      $t1, 1
+        lw      $s2, 0($t0)
 loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         beq     $t3, $zero, done
 
-        la      $s0, array          # base address of array in $s0 
-        sll     $t6, $t1, 2
-        add     $t6, $t6, $s0
-        lw      $t4, 0($t6)         #here instead of $t4 , maybe $a0
-        
-        move    $a1,$t4
-        move    $a2,$t6
-        slt     $t7, $t4, $t0
-        bne     $t7, $zero,calmin
-
+        lw      $t4, 0($t0)
+        slt     $t7, $t4, $s2
+        bne     $t7, $zero,Nmin
         addi    $t1, $t1, 1         # i++
+
+Nmin:   
+        move    $s2, $t4
+        addu    $t0, $t0, 4
         j       loop
-
-calmin: move    $t0, $a1   
-        move    $t8, $a2
-        j       $ra
-
-done:   lw      $t7, 36($s0)
-        sw      $t7, 0($t8)
-        sw      $a1, 36($s0)
-        
+        jr      $ra
+done:   
         li      $v0, 1              # print min element
-        move    $a0, $a1
+        move    $a0, $s2
         syscall
 
         li      $v0, 11             # print newline character
