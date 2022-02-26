@@ -2,7 +2,8 @@
 
         .data
 
-array:  .word 4 1 6 8 9 10 12 14 16 18
+array1:  .word 4 1 6 8 9 10 12 14 16 18
+array2:  .word 2 3 5 7 1 11 13 15 17 19
 
 
         .text
@@ -12,15 +13,16 @@ main:
 
         # base address of array to which element have to be copied is $t0
         #base address of array from which elements are copied is $s0
-        li      $t1, 0              # i (index) = 0
+        la	$s0, array1
+	la	$t0, array2 
+	li	$t1, 1
 
 loop:   slti    $t5, $t1, 10
         beq     $t5, $zero, done
-        add     $t2, $t1, $s0
-        lbu     $t3, 0($t2)
-        add     $t4, $t1, $t0
-        sb      $t3, 0($t4)
-        addi    $t1, $t1, 1
+       	lw	$t3, 0($s0)
+	sw	$t3, 0($t0)
+	addu 	$s0,$s0,4
+	addu	$t0,$t0,4
         j       loop
 
 
