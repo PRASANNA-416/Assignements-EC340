@@ -17,24 +17,24 @@ main:
 loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         beq     $t3, $zero, done
 
-        la      $t5, array          # fetch a[i]
+        la      $s0, array          # base addressof array in $s0 
         sll     $t6, $t1, 2
-        add     $t5, $t5, $t6
-        lw      $t4, 0($t5)
+        add     $s0, $s0, $t6
+        lw      $t4, 0($s0)         #here instead of $t4 , maybe $a0
         
         slt      $t7, $t4, $t0
-        beq      $t7, 1,calmin
+        bne      $t7, $zero,calmin
 
         addi    $t1, $t1, 1         # i++
         j       loop
 
-calmin:    lw      $t0, $t4
-        lw      $t8, $t5
+calmin: move    $t0, $t4
+        lw      $t8, $s0
         jr $ra
 
-done:   lw      $t7, 0($t5)
+done:   lw      $t7, 0($s0)
         sw      $t7, 0($t8)
-        sw      $t4, 0($t5)
+        sw      $t4, 0($s0)
         
         li      $v0, 1              # print min element
         move    $a0, $t4
