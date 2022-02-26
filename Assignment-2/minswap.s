@@ -20,12 +20,13 @@ loop:   slti    $t3, $t1, 10         # if i == 10 goto done
         slt     $t7, $t4, $s2
         bne     $t7, $zero,Nmin
         addi    $t1, $t1, 1         # i++
-
-Nmin:   
-        move    $s2, $t4
         addu    $t0, $t0, 4
         j       loop
-        jr      $ra
+
+Nmin:   
+        move    $s2,$t4
+        j       loop
+
 done:   
         li      $v0, 1              # print min element
         move    $a0, $s2
