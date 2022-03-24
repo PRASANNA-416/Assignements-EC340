@@ -1,4 +1,4 @@
-	module alucontrol(AluOp,FnField,AluCtrl);
+module alucontrol(AluOp,FnField,AluCtrl);
 
 input [1:0] AluOp;
 input [5:0] FnField; //for R-type instructions
@@ -15,6 +15,7 @@ always@(AluOp or FnField)begin
 		8'b1x_xx0100:AluCtrl=4'b0000; //and
 		8'b1x_xx0101:AluCtrl=4'b0001; //or
 		8'b1x_xx1010:AluCtrl=4'b0111; //slt
+		8'b10_xxxxxx:AluCtrl=4'b1110;//addi
 	endcase
 end
 
