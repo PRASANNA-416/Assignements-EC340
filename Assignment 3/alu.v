@@ -1,4 +1,4 @@
-module alu(opA, opB, ALUop, result, zero);
+module alu(opA, opB, ALUop, result, zero,notzero);
 
 input [31:0] opA;
 input [31:0] opB;
@@ -6,8 +6,10 @@ input [3:0] ALUop;
 
 output reg [31:0] result;
 output zero; //1 if result is 0
+output notzero ;
 
 assign zero = (result==0);
+assign notzero = (!result==0);
 
 always @(ALUop, opA, opB) begin
 	case(ALUop)
