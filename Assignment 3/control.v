@@ -18,9 +18,14 @@ always @(opcode) begin
 		6'b100011:{RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluOP}=9'b011110_0_00; //lw
 		6'b101011:{RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluOP}=9'bx1x001_0_00; //sw
 		6'b000100:{RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluOP}=9'bx0x000_1_01; //beq
+		6'b001000:{RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluOP}=9'b010100_0_00; //addi
+		6'b000101:{RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluOP}=9'b      _1_01; //bne
+		6'b000010:{RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluOP}=9'b      _1_01; //j
 		default:
 	{RegDst,ALUSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,AluOP}=9'bxxx_xxx_x_xx;
 	endcase
 end
 
 endmodule
+
+//refer this for opcode bits "http://alumni.cs.ucr.edu/~vladimir/cs161/mips.html"
