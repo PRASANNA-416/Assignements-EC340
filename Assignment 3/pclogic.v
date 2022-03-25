@@ -5,7 +5,8 @@ input clk;
 input [31:0] ain;
 //pecsel = branch & zero
 input pcsel;
-intput [25:0]Instruction;
+input [25:0]Instruction;
+input jump;
 
 output reg [31:0] aout;
 
