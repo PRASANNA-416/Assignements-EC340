@@ -1,9 +1,9 @@
-module datapath(clk, reset, RegDst,AluSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,NotBranchALUOp,OpCode);
+module datapath(clk, reset, RegDst,AluSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp,OpCode);
 
 input clk;
 input reset;
 
-input RegDst,AluSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,NotBranch;
+input RegDst,AluSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump;
 
 wire [31:0] Instruction;
 
