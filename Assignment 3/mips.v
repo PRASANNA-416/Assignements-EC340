@@ -16,8 +16,8 @@ wire MemRead;
 wire MemWrite;
 wire Branch;
 
-datapath Datapath(clk,reset,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,ALUOp,OpCode);
+datapath Datapath(clk,reset,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp,OpCode);
 
-control Control(OpCode,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,ALUOp); 
+  control Control(OpCode,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp); 
 
 endmodule
