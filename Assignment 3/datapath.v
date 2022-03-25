@@ -1,4 +1,4 @@
-module datapath(clk, reset, RegDst,AluSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp,OpCode);
+module datapath(clk, reset, RegDst,AluSrc,MemtoReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp,OpCode);   //changes made here 
 
 input clk;
 input reset;
@@ -29,8 +29,8 @@ wire [31:0] ReadData;
 
 wire [31:0] signExtend;
 
-wire PCsel1;
-wire PCsel2;
+wire PCsel1;  //changes made here 
+wire PCsel2; //changes made here 
 wire PCsel
 
 mem_async meminstr(PC_adr[7:0],Instruction); //Instruction memory
@@ -38,17 +38,17 @@ mem_sync memdata(clk, ALUout[7:0], ReadData, ReadRegister2, MemRead, MemWrite); 
 rf registerfile(clk,RegWrite,Instruction[25:21],Instruction[20:16],muxinstr_out, ReadRegister1, ReadRegister2, muxdata_out); //Registers
 
 alucontrol AluControl(ALUOp, Instruction[5:0], ALUCtrl); //ALUControl
-alu Alu(ReadRegister1, muxalu_out, ALUCtrl, ALUout, Zero,NotZero); //ALU
+alu Alu(ReadRegister1, muxalu_out, ALUCtrl, ALUout, Zero,NotZero); //ALU //changes made here 
 
-pclogic PC(clk, reset, signExtend, PC_adr, PCsel,jump,Instruction[25:0]); //generate PC
-andm andPC(Branch, Zero, PCsel1); //AndPC (branch & zero)
-andm notandPC(NotBranch,NotZero,PCsel2);
+pclogic PC(clk, reset, signExtend, PC_adr, PCsel,jump,Instruction[25:0]); //generate PC   //changes made here 
+andm andPC(Branch, Zero, PCsel1); //AndPC (branch & zero)    //changes made here 
+andm notandPC(NotBranch,NotZero,PCsel2);     //changes made here 
 signextend Signextend(signExtend, Instruction[15:0]); //Sign extend
 
 mux #(5) muxinstr(RegDst, Instruction[20:16],Instruction[15:11],muxinstr_out);//MUX for Write Register
 mux #(32) muxalu(AluSrc, ReadRegister2, signExtend, muxalu_out);//MUX for ALU
-mux #(32) muxdata(MemtoReg, ALUout, ReadData, muxdata_out); //MUX for Data memory
-mux #(1) muxPC(NotBranch,PCsel1,PCsel2,PCsel) //MUX for checking if bne or beq 
+mux #(32) muxdata(MemtoReg, ALUout, ReadData, muxdata_out); //MUX for Data memory 
+mux #(1) muxPC(NotBranch,PCsel1,PCsel2,PCsel) //MUX for checking if bne or beq    //changes made here 
 
 
 
