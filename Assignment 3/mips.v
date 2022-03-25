@@ -18,6 +18,6 @@ wire Branch;
 
 datapath Datapath(clk,reset,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp,OpCode);
 
-  control Control(OpCode,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp); 
+control Control(OpCode,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp); 
 
 endmodule
