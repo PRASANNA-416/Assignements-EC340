@@ -9,7 +9,7 @@ output zero; //1 if result is 0
 output notzero ;
 
 assign zero = (result==0);
-	assign notzero = (!result==0); //changes made here 
+assign notzero = (!result==0); //changes made here 
 
 always @(ALUop, opA, opB) begin
 	case(ALUop)
