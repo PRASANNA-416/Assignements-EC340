@@ -20,8 +20,7 @@ always @(posedge clk) begin
 		if (pcsel==1 and jump==0) begin            //changes made here 
 			aout<=ain+aout+1; //branch
 		end
-		if(jump==1) begin
-			Instruction<= Instruction<<2;       //changes made here 
+		if(jump==1) begin      //changes made here 
 			aout<= {aout[31:28],Instruction};
 		end
 end
