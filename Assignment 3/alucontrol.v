@@ -15,7 +15,7 @@ always@(AluOp or FnField)begin
 		8'b1x_xx0100:AluCtrl=4'b0000; //and
 		8'b1x_xx0101:AluCtrl=4'b0001; //or
 		8'b1x_xx1010:AluCtrl=4'b0111; //slt
-		8'b1x_xx1000:AluCtrl=4'b0010;//addi
+		//8'b1x_xx1000:AluCtrl=4'b0010;//addi
 	endcase
 end
 
