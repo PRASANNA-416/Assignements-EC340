@@ -15,6 +15,8 @@ wire RegWrite;
 wire MemRead;
 wire MemWrite;
 wire Branch;
+wire NotBranch;
+wire jump;
 
 datapath Datapath(clk,reset,RegDst,ALUSrc,MemToReg,RegWrite,MemRead,MemWrite,Branch,NotBranch,jump,ALUOp,OpCode);
 
